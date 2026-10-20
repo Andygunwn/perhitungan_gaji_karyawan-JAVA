@@ -1,0 +1,53 @@
+// Mulai
+
+// Deklarasi Variable
+DECLARE golongan : STRING
+DECLARE jamLembur : INTEGER
+DECLARE gajiPokok : INTEGER
+DECLARE gajiLembur : INTEGER
+DECLARE totalPenghasilan : INTEGER
+
+// Memberikan pengguna untuk input data
+INPUT golongan
+INPUT jamLembur
+
+// Melakukan seleksi golongan karyawan
+IF golongan == "A" OR golongan == "a" THEN
+    gajiPokok = 5000000
+ELSEIF golongan == "B" OR golongan == "b" THEN
+    gajiPokok = 6500000
+ELSEIF golongan == "C" OR golongan == "c" THEN
+    gajiPokok = 9500000
+ELSE
+    OUTPUT "Golongan tidak valid"
+    EXIT
+ENDIF
+
+// Melakukan seleksi jam lembur karyawan
+IF jamLembur == 1 THEN
+    gajiLembur = gajiPokok * 30 / 100
+ELSEIF jamLembur == 2 THEN
+    gajiLembur = gajiPokok * 32 / 100
+ELSEIF jamLembur == 3 THEN
+    gajiLembur = gajiPokok * 34 / 100
+ELSEIF jamLembur == 4 THEN
+    gajiLembur = gajiPokok * 36 / 100
+ELSEIF jamLembur >= 5 THEN
+    gajiLembur = gajiPokok * 38 / 100
+ELSE
+    gajiLembur = 0
+    OUTPUT "Karyawan tidak lembur"
+ENDIF
+
+// Penjumlahan keseluruhan gaji karyawan
+totalPenghasilan = gajiPokok + gajiLembur
+
+// Memberikan Output kepada pengguna
+OUTPUT "Golongan Karyawan: ", golongan
+OUTPUT "Hasil Gaji Pokok: ", gajiPokok
+OUTPUT "Total Jam Lembur: ", jamLembur
+OUTPUT "Hasil Gaji Lembur: ", gajiLembur
+OUTPUT "Total Penghasilan: ", totalPenghasilan
+
+// selesai
+END
